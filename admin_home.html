@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Администраторская панель</title>
+  <link rel="shortcut icon" href="assets/icons/logo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/jqvmap.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body class="admin_home">
+
+  <header class="header_admin">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo_header">
+          <a href=""><img src="assets/icons/nav_logo.png" alt=""></a>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="Поиск">
+          <div class="search_btn">
+            <i class="fas fa-search"></i>
+          </div>
+        </div>
+        <div class="chat">
+          <i class="fas fa-comment">
+            <span>99</span>
+          </i>
+          <div class="chat_text">
+            <ul>
+              <li><strong>Чаты администраторов</strong> <br>
+                Этот чат отвечает за то чтобы мы могли отвечать пользователям на вопросы, и общаться с каждым
+                пользователям от имени “Поддержки” (администрации)
+              </li> <br>
+              <li><strong>Чаты пользователей</strong> <br>
+                Этот чат отвечает за то чтобы мы могли видеть все переписки людей между собой и контролировать
+                правильность и корректность работы и общения между пользователями, более подробнее еще опишу ниже
+                внимательно читаем и смотрим всё и вникаем в логику ТЗ и прототипов, будет трудно но всё возможно и
+                зависит от нашего желания!
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="avatar">
+          <img src="assets/images/user4.png" alt="">
+        </div>
+      </div>
+
+      <div class="header_title">
+        <div class="menu_item">
+          <div class="all_category">
+            Все категории
+            <i class="fas fa-bars"></i>
+          </div>
+          <a href="" class="menu_list first_menu">Главная страница</a>
+          <a href="" class="menu_list">Заказы и Вакансии</a>
+          <a href="" class="menu_list">Безопасный платеж</a>
+          <a href="" class="menu_list">Творческая мастерская</a>
+          <a href="" class="menu_list">Реферальная программа</a>
+          <a href="" class="menu_list">Услуги и аукцион </a>
+          <a href="" class="menu_list">Пользователи</a>
+          <a href="" class="menu_list">Верификация</a>
+          <a href="" class="menu_list">Блог и новости </a>
+          <a href="" class="menu_list">Форум</a>
+          <a href="" class="menu_list">Страницы</a>
+          <a href="" class="menu_list">Уведомления </a>
+          <a href="" class="menu_list">Бонусы</a>
+          <a href="" class="menu_list">Работа с почтой</a>
+          <a href="" class="menu_list">Специализации</a>
+          <a href="" class="menu_list">SEO- оптимизация</a>
+          <a href="" class="menu_list">Настройка сайта</a>
+        </div>
+
+        <div class="info_item">
+          <div class="sup_list">
+            <div class="sup_list_info">
+              <h4>Всего исполнителей</h4>
+              <div class="col">
+                <p>Общее кол-ва</p> <span><span>1500</span> / <span>1%</span></span>
+              </div>
+              <div class="col">
+                <p>За месяц</p> <span><span>150</span> / <span>1%</span></span>
+              </div>
+              <hr>
+              <div class="col">
+                <p>За cегодня</p> <span>+<span>10</span> / <span>1%</span></span>
+              </div>
+            </div>
+            <div class="sup_list_info">
+              <h4>Всего заказчиков</h4>
+              <div class="col">
+                <p>Общее кол-ва</p> <span><span>1500</span> / <span>1%</span></span>
+              </div>
+              <div class="col">
+                <p>За месяц</p> <span><span>150</span> / <span>1%</span></span>
+              </div>
+              <hr>
+              <div class="col">
+                <p>За cегодня</p> <span>+<span>10</span> / <span>1%</span></span>
+              </div>
+            </div>
+            <div class="sup_list_info">
+              <h4>Денежные показатели</h4>
+              <div class="col">
+                <p>Общий оборот</p> <span><span>1.000.000</span>$</span>
+              </div>
+              <div class="col">
+                <p>За месяц</p> <span><span>1200</span>$</span>
+              </div>
+              <div class="col">
+                <p>За cегодня</p> <span><span>50</span>$</span>
+              </div>
+              <hr>
+              <div class="col">
+                <p>Прибыль Letcop</p> <span><span>5000</span>$</span>
+              </div>
+            </div>
+          </div>
+          <div class="middle_list">
+            <div class="chart_box">
+              <canvas id="myChart"></canvas>
+            </div>
+            <!-- Map section -->
+            <section class="map_section">
+              <div class="inner__block">
+                <div class="statistic">
+                  <div class="country">
+                    <span class='county-word' id="js-country">Монголия</span>
+                    <span class="line"></span>
+                  </div>
+                  <div class="users__stat">
+                    <span class='digits' id='js-digits'>9348</span>
+                    <br>
+                    <span class="users" id='js-users'>Пользователей</span>
+                  </div>
+                </div>
+                <div class="map">
+
+                  <!-- svg map -->
+                  <div id="vmap" style="width: 580px; height: 300px;"></div>
+                  <!-- svg map -->
+                </div>
+              </div>
+            </section>
+            <!-- Map section -->
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script type="text/javascript" src="assets/js/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.vmap.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.vmap.world.js" charset="utf-8"></script>
+  <script type="text/javascript" src="assets/js/country.js"></script>
+  <script src="assets/js/admin_home.js"></script>
+</body>
+
+</html>
