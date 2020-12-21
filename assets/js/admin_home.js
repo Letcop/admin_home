@@ -1,8 +1,11 @@
 let chat = document.querySelector('.chat i');
 let chatText = document.querySelector('.chat_text');
 const showChat = document.querySelector('.header_title');
+let questionsLists = document.querySelectorAll('.questions_list');
+let removeErrorQuestions = document.querySelectorAll('.remove_error_questions');
+let detailedBtns = document.querySelectorAll('.error_questions .detailed_btn');
 
-
+// start chat
 showChat.addEventListener('click', () => {
   chatText.style.visibility = 'hidden'
 });
@@ -18,9 +21,10 @@ chat.addEventListener('click', () => {
   return click = 0;
   }
 });
+// End chat
 
 
-// chart
+// Start chart
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
@@ -41,8 +45,9 @@ var chart = new Chart(ctx, {
     // Configuration options go here
     options: {}
 });
+// End Chart
 
-
+// start map
   let pathes = document.getElementsByTagName('path');
   let country = document.querySelector('#js-country');
   let digits = document.querySelector('#js-digits');
@@ -97,6 +102,54 @@ var chart = new Chart(ctx, {
           }, 10);
       }
   });
+// End map
+
+// Start  Ошибки и тех. вопросы
+questionsLists.forEach(elem => {
+    elem.addEventListener('mouseover', handleMouseover);
+    elem.addEventListener('mouseout', handleMouseout);
+});
+
+removeErrorQuestions.forEach(remove => {
+    remove.addEventListener('click', handleRemoveQuestion)
+});
+
+detailedBtns.forEach(openText => {
+    openText.addEventListener('click', handleOpenClick)
+})
+
+function handleMouseover() {
+    this.style.backgroundColor = '#efefef'
+    this.children[2].children[0].style.visibility = 'visible'
+    this.children[2].children[2].children[0].style.visibility = 'visible'
+}
+
+function handleMouseout() {
+    this.style.backgroundColor = '#fff'
+    this.children[2].children[0].style.visibility = 'hidden'
+    this.children[2].children[2].children[0].style.visibility = 'hidden'
+}
+
+function handleRemoveQuestion() {
+    this.parentElement.parentElement.style.display = 'none'
+}
+
+
+let clickNumText;
+function handleOpenClick() {
+    let text = this.parentElement.parentElement.parentElement.children[1].children[4];
+    if(clickNumText == 0) {
+        this.innerHTML = 'Подробное'
+        text.classList.remove('error_questions_text')
+
+        return clickNumText = 1
+    } else {
+    this.innerHTML = 'Свернуть'
+    text.classList.add('error_questions_text')
+
+    return clickNumText = 0
+    }
+}
 
 
   
