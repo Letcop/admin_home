@@ -76,7 +76,6 @@ var chart = new Chart(ctx, {
           country.textContent = region;
           let animation = setInterval(() => {
               k += 0.2;
-              console.log(k);
               country.style.opacity = String(k);
               if (k >= 1) {
                   clearInterval(animation);
