@@ -4,6 +4,9 @@ const showChat = document.querySelector('.header_title');
 let questionsLists = document.querySelectorAll('.questions_list');
 let removeErrorQuestions = document.querySelectorAll('.remove_error_questions');
 let detailedBtns = document.querySelectorAll('.error_questions .detailed_btn');
+let addTaskText = document.getElementById('addTaskText');
+let addText = document.querySelector('.add_task');
+let tasks = document.querySelector('.tasks');
 
 // start chat
 showChat.addEventListener('click', () => {
@@ -35,7 +38,7 @@ var chart = new Chart(ctx, {
     data: {
         labels: ['Январь', 'Февраль', 'Март', 'Aпреля', 'Май', 'Июнь', 'Июль'],
         datasets: [{
-            label: 'Посешения платформы',
+            label: '',
             // backgroundColor: 'rgb(255, 99, 132)',
             borderColor: '#00cf4d',
             data: [0, 50, 25, 20, 10, 30, 15 ]
@@ -136,7 +139,8 @@ function handleRemoveQuestion() {
 
 let clickNumText;
 function handleOpenClick() {
-    let text = this.parentElement.parentElement.parentElement.children[1].children[4];
+    console.dir(this.parentElement.parentElement.parentElement.children[1].children[2])
+    let text = this.parentElement.parentElement.parentElement.children[1].children[2];
     if(clickNumText == 0) {
         this.innerHTML = 'Подробное'
         text.classList.remove('error_questions_text')
@@ -149,6 +153,83 @@ function handleOpenClick() {
     return clickNumText = 0
     }
 }
+
+
+
+// to do list & tasks list
+
+addText.addEventListener('click', () => {
+    let taskList = document.createElement('div');
+
+    taskList.classList.add('task_list');
+    tasks.append(taskList);
+
+    taskList.innerHTML = `<input type="checkbox" class="checkTask">
+     <textarea class="task_text" disabled>${addTaskText.value}</textarea>
+      <i class="fas fa-times-circle remove_task"></i>`
+      addTaskText.value = ''
+
+
+let taskLists = document.querySelectorAll('.task_list');
+let removeTask = document.querySelectorAll('.remove_task');
+
+
+taskLists.forEach(tasklist => {
+    tasklist.addEventListener('mouseover', hanleMouseOverTask);
+    tasklist.addEventListener('mouseout', hanleMouseOutTask);
+});
+
+removeTask.forEach(remove => {
+    remove.addEventListener('click', () => {
+        console.dir(remove.parentElement.remove())
+    })
+})
+
+function hanleMouseOverTask() {
+    this.style.border = '1px solid #efefef'
+    this.children[2].style.visibility = 'visible'
+}
+
+function hanleMouseOutTask() {
+    this.style.border = '1px solid #fff'
+    this.children[2].style.visibility = 'hidden'
+}
+
+});
+
+
+
+
+
+//когда будет готова backend част это коды не нужно
+//^^^^^^^^^^^^^^
+let taskLists = document.querySelectorAll('.task_list');
+let removeTask = document.querySelectorAll('.remove_task');
+
+
+taskLists.forEach(tasklist => {
+    tasklist.addEventListener('mouseover', hanleMouseOverTask);
+    tasklist.addEventListener('mouseout', hanleMouseOutTask);
+});
+
+function hanleMouseOverTask() {
+    this.style.border = '1px solid #efefef'
+    this.children[2].style.visibility = 'visible'
+}
+
+function hanleMouseOutTask() {
+    this.style.border = '1px solid #fff'
+    this.children[2].style.visibility = 'hidden'
+}
+
+removeTask.forEach(remove => {
+    remove.addEventListener('click', () => {
+        console.dir(remove.parentElement.remove())
+    })
+});
+// ^^^^^^^^^^^^^^^^^^
+
+
 
 
   

@@ -31,11 +31,11 @@
           </i>
           <div class="chat_text">
             <ul>
-              <li><strong>Чаты администраторов</strong> <br>
+              <li><a href="">Чаты администраторов</a> <br>
                 Этот чат отвечает за то чтобы мы могли отвечать пользователям на вопросы, и общаться с каждым
                 пользователям от имени “Поддержки” (администрации)
               </li> <br>
-              <li><strong>Чаты пользователей</strong> <br>
+              <li><a href="">Чаты пользователей</a> <br>
                 Этот чат отвечает за то чтобы мы могли видеть все переписки людей между собой и контролировать
                 правильность и корректность работы и общения между пользователями, более подробнее еще опишу ниже
                 внимательно читаем и смотрим всё и вникаем в логику ТЗ и прототипов, будет трудно но всё возможно и
@@ -121,41 +121,37 @@
           </div>
           <div class="middle_list">
             <div class="chart_box">
+              <div class="user_online">
+                <span><span>Пользователей онлайн</span> | <span>200</span></span>
+              </div>
               <div class="month">
                 <span>Месяц </span>
               <i class="fas fa-sort-up"></i>
               </div>
               <canvas id="myChart"></canvas>
             </div>
-            <div class="traffic">
-              <div class="traffic_item">
-                Трафик
-              <div class="month">
-                <span>Месяц </span>
-              <i class="fas fa-sort-up"></i>
+            <div class="tasks">
+              <div class="task_item">
+                <input type="text" placeholder="Напишите сюда" id="addTaskText">
+                <i class="fas fa-plus-circle add_task"></i>
               </div>
+              <div class="task_list">
+                <input type="checkbox" class="checkTask">
+                <textarea class="task_text" disabled>Далеко-далеко за словесными</textarea>
+                <i class="fas fa-times-circle remove_task"></i>
               </div>
-              <div class="traffic_list">
-                <span>Instagram</span>
-                <strong>1500</strong>
+              <div class="task_list">
+                <input type="checkbox" class="checkTask">
+                <textarea class="task_text" disabled>Далеко-далеко за словесными</textarea>
+                <i class="fas fa-times-circle remove_task"></i>
               </div>
-              <div class="traffic_list">
-                <span>Facebook</span>
-                <strong>1800</strong>
-              </div>
-              <div class="traffic_list">
-                <span>Google</span>
-                <strong>500</strong>
-              </div>
-              <div class="traffic_list">
-                <span>Яндекс</span>
-                <strong>100</strong>
-              </div>
-              <div class="traffic_list">
-                <span>Проче</span>
-                <strong>40</strong>
+              <div class="task_list">
+                <input type="checkbox" class="checkTask">
+                <textarea class="task_text" disabled>Далеко-далеко за словесными</textarea>
+                <i class="fas fa-times-circle remove_task"></i>
               </div>
             </div>
+            <!-- End tasks -->
           </div>
           <!-- Map section -->
           <section class="map_section">
@@ -192,13 +188,13 @@
                 <img src="assets/images/user4.png" alt="">
               </div>
               <div class="info_user">
-                <a href="">Тиму Касимов</a> <br>
-                <span>Текст желаются туда сюда</span> <br>
+                <h4>Тиму Касимов</h4>
+                <a href="">hamillioner</a>
                 <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique nihil fugiat nisi beatae quas corrupti voluptas accusantium deserunt eos repellat, dolorem eveniet perferendis culpa quos alias tempora vitae. At natus odio eos quisquam cumque saepe fugiat aspernatur incidunt, sint corrupti similique! Cumque sed corporis hic qui quaerat tempore saepe rerum quae odio illum iusto dolorum sint odit nisi et adipisci facere perspiciatis optio velit, quas exercitationem laboriosam sit dicta! Architecto, iusto incidunt sunt nemo repellendus, ut velit veritatis, quas harum dolorem natus alias recusandae mollitia ipsum non voluptates officiis corporis eveniet id vero! Dolores, delectus amet! Unde quos vel magni minus. Veritatis libero deleniti, repellendus reprehenderit quidem illo ab incidunt aliquam, at iure commodi earum magnam modi adipisci nostrum quisquam labore ipsum provident deserunt consequuntur perferendis eius optio. Molestias obcaecati quidem sequi corporis, ea natus delectus, eveniet cum eos, laboriosam eaque quod vitae beatae! Veniam voluptas quam et esse corrupti!</p>
                 </div>
               <div class="right_list">
                 <i class="fas fa-times-circle remove_error_questions"></i>
-                <span>20.12.20</span>
+                <span><span>20.12.2020</span> в <span>17:30</span></span>
                 <div class="buttons">
                   <button class="detailed_btn">Подробное</button>
                   <button>Ответить</button>
@@ -210,13 +206,13 @@
                 <img src="assets/images/user4.png" alt="">
               </div>
               <div class="info_user">
-                <a href="">Тиму Касимов</a> <br>
-                <span>Текст желаются туда сюда</span> <br>
+                 <h4>Тиму Касимов</h4>
+                <a href="">hamillioner</a>
                 <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique nihil fugiat nisi beatae quas corrupti voluptas accusantium deserunt eos repellat, dolorem eveniet perferendis culpa quos alias tempora vitae. At natus odio eos quisquam cumque saepe fugiat aspernatur incidunt, sint corrupti similique! Cumque sed corporis hic qui quaerat tempore saepe rerum quae odio illum iusto dolorum sint odit nisi et adipisci facere perspiciatis optio velit, quas exercitationem laboriosam sit dicta! Architecto, iusto incidunt sunt nemo repellendus, ut velit veritatis, quas harum dolorem natus alias recusandae mollitia ipsum non voluptates officiis corporis eveniet id vero! Dolores, delectus amet! Unde quos vel magni minus. Veritatis libero deleniti, repellendus reprehenderit quidem illo ab incidunt aliquam, at iure commodi earum magnam modi adipisci nostrum quisquam labore ipsum provident deserunt consequuntur perferendis eius optio. Molestias obcaecati quidem sequi corporis, ea natus delectus, eveniet cum eos, laboriosam eaque quod vitae beatae! Veniam voluptas quam et esse corrupti!</p>
                 </div>
               <div class="right_list">
                 <i class="fas fa-times-circle remove_error_questions"></i>
-                <span>20.12.20</span>
+                <span><span>20.12.2020</span> в <span>17:30</span></span>
                 <div class="buttons">
                   <button class="detailed_btn">Подробное</button>
                   <button>Ответить</button>
@@ -228,13 +224,13 @@
                 <img src="assets/images/user4.png" alt="">
               </div>
               <div class="info_user">
-                <a href="">Тиму Касимов</a> <br>
-                <span>Текст желаются туда сюда</span> <br>
+                 <h4>Тиму Касимов</h4>
+                <a href="">hamillioner</a>
                 <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique nihil fugiat nisi beatae quas corrupti voluptas accusantium deserunt eos repellat, dolorem eveniet perferendis culpa quos alias tempora vitae. At natus odio eos quisquam cumque saepe fugiat aspernatur incidunt, sint corrupti similique! Cumque sed corporis hic qui quaerat tempore saepe rerum quae odio illum iusto dolorum sint odit nisi et adipisci facere perspiciatis optio velit, quas exercitationem laboriosam sit dicta! Architecto, iusto incidunt sunt nemo repellendus, ut velit veritatis, quas harum dolorem natus alias recusandae mollitia ipsum non voluptates officiis corporis eveniet id vero! Dolores, delectus amet! Unde quos vel magni minus. Veritatis libero deleniti, repellendus reprehenderit quidem illo ab incidunt aliquam, at iure commodi earum magnam modi adipisci nostrum quisquam labore ipsum provident deserunt consequuntur perferendis eius optio. Molestias obcaecati quidem sequi corporis, ea natus delectus, eveniet cum eos, laboriosam eaque quod vitae beatae! Veniam voluptas quam et esse corrupti!</p>
                 </div>
               <div class="right_list">
                 <i class="fas fa-times-circle remove_error_questions"></i>
-                <span>20.12.20</span>
+                <span><span>20.12.2020</span> в <span>17:30</span></span>
                 <div class="buttons">
                   <button class="detailed_btn">Подробное</button>
                   <button>Ответить</button>
@@ -246,13 +242,13 @@
                 <img src="assets/images/user4.png" alt="">
               </div>
               <div class="info_user">
-                <a href="">Тиму Касимов</a> <br>
-                <span>Текст желаются туда сюда</span> <br>
+                 <h4>Тиму Касимов</h4>
+                <a href="">hamillioner</a>
                 <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique nihil fugiat nisi beatae quas corrupti voluptas accusantium deserunt eos repellat, dolorem eveniet perferendis culpa quos alias tempora vitae. At natus odio eos quisquam cumque saepe fugiat aspernatur incidunt, sint corrupti similique! Cumque sed corporis hic qui quaerat tempore saepe rerum quae odio illum iusto dolorum sint odit nisi et adipisci facere perspiciatis optio velit, quas exercitationem laboriosam sit dicta! Architecto, iusto incidunt sunt nemo repellendus, ut velit veritatis, quas harum dolorem natus alias recusandae mollitia ipsum non voluptates officiis corporis eveniet id vero! Dolores, delectus amet! Unde quos vel magni minus. Veritatis libero deleniti, repellendus reprehenderit quidem illo ab incidunt aliquam, at iure commodi earum magnam modi adipisci nostrum quisquam labore ipsum provident deserunt consequuntur perferendis eius optio. Molestias obcaecati quidem sequi corporis, ea natus delectus, eveniet cum eos, laboriosam eaque quod vitae beatae! Veniam voluptas quam et esse corrupti!</p>
                 </div>
               <div class="right_list">
                 <i class="fas fa-times-circle remove_error_questions"></i>
-                <span>20.12.20</span>
+                <span><span>20.12.2020</span> в <span>17:30</span></span>
                 <div class="buttons">
                   <button class="detailed_btn">Подробное</button>
                   <button>Ответить</button>
@@ -272,13 +268,13 @@
                 <img src="assets/images/user4.png" alt="">
               </div>
               <div class="info_user">
-                <a href="">Тиму Касимов</a> <br>
-                <span>Текст желаются туда сюда</span> <br>
+                 <h4>Тиму Касимов</h4>
+                <a href="">hamillioner</a>
                 <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique nihil fugiat nisi beatae quas corrupti voluptas accusantium deserunt eos repellat, dolorem eveniet perferendis culpa quos alias tempora vitae. At natus odio eos quisquam cumque saepe fugiat aspernatur incidunt, sint corrupti similique! Cumque sed corporis hic qui quaerat tempore saepe rerum quae odio illum iusto dolorum sint odit nisi et adipisci facere perspiciatis optio velit, quas exercitationem laboriosam sit dicta! Architecto, iusto incidunt sunt nemo repellendus, ut velit veritatis, quas harum dolorem natus alias recusandae mollitia ipsum non voluptates officiis corporis eveniet id vero! Dolores, delectus amet! Unde quos vel magni minus. Veritatis libero deleniti, repellendus reprehenderit quidem illo ab incidunt aliquam, at iure commodi earum magnam modi adipisci nostrum quisquam labore ipsum provident deserunt consequuntur perferendis eius optio. Molestias obcaecati quidem sequi corporis, ea natus delectus, eveniet cum eos, laboriosam eaque quod vitae beatae! Veniam voluptas quam et esse corrupti!</p>
                 </div>
               <div class="right_list">
                 <i class="fas fa-times-circle remove_error_questions"></i>
-                <span>20.12.20</span>
+                <span><span>20.12.2020</span> в <span>17:30</span></span>
                 <div class="buttons">
                   <button class="detailed_btn">Подробное</button>
                   <button>Ответить</button>
@@ -290,13 +286,13 @@
                 <img src="assets/images/user4.png" alt="">
               </div>
               <div class="info_user">
-                <a href="">Тиму Касимов</a> <br>
-                <span>Текст желаются туда сюда</span> <br>
+                 <h4>Тиму Касимов</h4>
+                <a href="">hamillioner</a>
                 <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique nihil fugiat nisi beatae quas corrupti voluptas accusantium deserunt eos repellat, dolorem eveniet perferendis culpa quos alias tempora vitae. At natus odio eos quisquam cumque saepe fugiat aspernatur incidunt, sint corrupti similique! Cumque sed corporis hic qui quaerat tempore saepe rerum quae odio illum iusto dolorum sint odit nisi et adipisci facere perspiciatis optio velit, quas exercitationem laboriosam sit dicta! Architecto, iusto incidunt sunt nemo repellendus, ut velit veritatis, quas harum dolorem natus alias recusandae mollitia ipsum non voluptates officiis corporis eveniet id vero! Dolores, delectus amet! Unde quos vel magni minus. Veritatis libero deleniti, repellendus reprehenderit quidem illo ab incidunt aliquam, at iure commodi earum magnam modi adipisci nostrum quisquam labore ipsum provident deserunt consequuntur perferendis eius optio. Molestias obcaecati quidem sequi corporis, ea natus delectus, eveniet cum eos, laboriosam eaque quod vitae beatae! Veniam voluptas quam et esse corrupti!</p>
                 </div>
               <div class="right_list">
                 <i class="fas fa-times-circle remove_error_questions"></i>
-                <span>20.12.20</span>
+                <span><span>20.12.2020</span> в <span>17:30</span></span>
                 <div class="buttons">
                   <button class="detailed_btn">Подробное</button>
                   <button>Ответить</button>
@@ -308,13 +304,13 @@
                 <img src="assets/images/user4.png" alt="">
               </div>
               <div class="info_user">
-                <a href="">Тиму Касимов</a> <br>
-                <span>Текст желаются туда сюда</span> <br>
+                 <h4>Тиму Касимов</h4>
+                <a href="">hamillioner</a>
                 <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique nihil fugiat nisi beatae quas corrupti voluptas accusantium deserunt eos repellat, dolorem eveniet perferendis culpa quos alias tempora vitae. At natus odio eos quisquam cumque saepe fugiat aspernatur incidunt, sint corrupti similique! Cumque sed corporis hic qui quaerat tempore saepe rerum quae odio illum iusto dolorum sint odit nisi et adipisci facere perspiciatis optio velit, quas exercitationem laboriosam sit dicta! Architecto, iusto incidunt sunt nemo repellendus, ut velit veritatis, quas harum dolorem natus alias recusandae mollitia ipsum non voluptates officiis corporis eveniet id vero! Dolores, delectus amet! Unde quos vel magni minus. Veritatis libero deleniti, repellendus reprehenderit quidem illo ab incidunt aliquam, at iure commodi earum magnam modi adipisci nostrum quisquam labore ipsum provident deserunt consequuntur perferendis eius optio. Molestias obcaecati quidem sequi corporis, ea natus delectus, eveniet cum eos, laboriosam eaque quod vitae beatae! Veniam voluptas quam et esse corrupti!</p>
                 </div>
               <div class="right_list">
                 <i class="fas fa-times-circle remove_error_questions"></i>
-                <span>20.12.20</span>
+                <span><span>20.12.2020</span> в <span>17:30</span></span>
                 <div class="buttons">
                   <button class="detailed_btn">Подробное</button>
                   <button>Ответить</button>
@@ -326,13 +322,13 @@
                 <img src="assets/images/user4.png" alt="">
               </div>
               <div class="info_user">
-                <a href="">Тиму Касимов</a> <br>
-                <span>Текст желаются туда сюда</span> <br>
+                 <h4>Тиму Касимов</h4>
+                <a href="">hamillioner</a>
                 <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique nihil fugiat nisi beatae quas corrupti voluptas accusantium deserunt eos repellat, dolorem eveniet perferendis culpa quos alias tempora vitae. At natus odio eos quisquam cumque saepe fugiat aspernatur incidunt, sint corrupti similique! Cumque sed corporis hic qui quaerat tempore saepe rerum quae odio illum iusto dolorum sint odit nisi et adipisci facere perspiciatis optio velit, quas exercitationem laboriosam sit dicta! Architecto, iusto incidunt sunt nemo repellendus, ut velit veritatis, quas harum dolorem natus alias recusandae mollitia ipsum non voluptates officiis corporis eveniet id vero! Dolores, delectus amet! Unde quos vel magni minus. Veritatis libero deleniti, repellendus reprehenderit quidem illo ab incidunt aliquam, at iure commodi earum magnam modi adipisci nostrum quisquam labore ipsum provident deserunt consequuntur perferendis eius optio. Molestias obcaecati quidem sequi corporis, ea natus delectus, eveniet cum eos, laboriosam eaque quod vitae beatae! Veniam voluptas quam et esse corrupti!</p>
                 </div>
               <div class="right_list">
                 <i class="fas fa-times-circle remove_error_questions"></i>
-                <span>20.12.20</span>
+                <span><span>20.12.2020</span> в <span>17:30</span></span>
                 <div class="buttons">
                   <button class="detailed_btn">Подробное</button>
                   <button>Ответить</button>

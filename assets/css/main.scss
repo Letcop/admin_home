@@ -101,6 +101,7 @@ button:focus {
   }
    
   textarea::-webkit-scrollbar,
+  .tasks::-webkit-scrollbar,
   .error_questions::-webkit-scrollbar,
   .error_questions_text::-webkit-scrollbar {
     width: 5px;
@@ -109,6 +110,7 @@ button:focus {
   }
   /* Track */
   textarea::-webkit-scrollbar-track,
+  .tasks::-webkit-scrollbar-track,
   .error_questions::-webkit-scrollbar-track,
   .error_questions_text::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey; 
@@ -117,6 +119,7 @@ button:focus {
   
   /* Handle */
 textarea::-webkit-scrollbar-thumb,
+.tasks::-webkit-scrollbar-thumb,
   .error_questions::-webkit-scrollbar-thumb,
   .error_questions_text::-webkit-scrollbar-thumb {
   background: $primary-color; 
@@ -190,7 +193,7 @@ textarea::-webkit-scrollbar-thumb,
         width: 600px;
         top: 75px;
         left: calc(100%/2.05);
-        z-index: 1;
+        z-index: 7;
         visibility: hidden;
         transition: .3s;
         li {
@@ -198,6 +201,15 @@ textarea::-webkit-scrollbar-thumb,
          position: relative;
          padding-left: 20px;
          font-size: 14px;
+         a {
+           text-decoration: none;
+           font-size: 18px;
+           font-weight: 600;
+         }
+         a:hover {
+           color: $primary-color;
+           text-decoration: underline;
+         }
         }
         li:before {
           content: '';
@@ -311,9 +323,10 @@ textarea::-webkit-scrollbar-thumb,
           border-radius: 10px;
           transition: .3s ease-in-out;
           position: relative;
-        .month {
+        .month,
+        .user_online {
           position: absolute;
-          top: 20px;
+          top: 10px;
           right: 20px;
           width: 80px;
           height: 20px;
@@ -328,56 +341,128 @@ textarea::-webkit-scrollbar-thumb,
             font-size: 22px;
           }
         }
+        .user_online {
+          left: 20px;
+          width: 300px;
+          height: 35px;
+          background-color: $primary-color-text;
+          border: none;
+          z-index: 5;
+          // font-size: 17px;
+          font-weight: 600;
+          padding-left: 5px;
+          span {
+            margin-top: -15px;
+          }
+        }
         }
         .chart_box:hover {
           border: 1px solid $primary-color;
         }
-        .traffic {
+        .tasks {
           width: 270px;
           height: 310px;
           border-radius: 10px;
           border: 1px solid $divider-color;
           color: $accent-color-light;
-          padding: 20px;
+          padding: 20px 10px;
           margin-top: 15px;
           transition: .3s ease-in-out;
-          .traffic_item {
-          @include d-space();
-          position: relative;
-          font-weight: 600;
-          .month {
-            width: 80px;
-            height: 20px;
-            padding: 0 5px;
-            border-radius: 5px;
+          overflow-y: scroll;
+          .task_item {
             @include d-space();
-            font-size: 14px;
-            font-weight: 500;
-            border: 1px solid $primary-color;
+            margin-bottom: 25px;
+            input {
+              width: 85%;
+              height: 25px;
+              border-radius: 10px;
+              padding: 0 5px;
+              outline: none;
+              border: 1px solid $divider-color;
+            }
+            input:focus {
+              border: 1px solid $primary-color;
+            }
             i {
-              padding-top: 10px;
+              color: $divider-color-text;
               font-size: 22px;
+              cursor: pointer;
+            }
+            i:hover {
+              color: $primary-color;
             }
           }
-          }
-          .traffic_list {
-            @include d-space();
-            padding: 10px 15px;
-            border: 1px solid $divider-color;
+          .task_list {
+            display: flex;
+            margin-top: 5px;
+            max-width: 100%;
+            position: relative;
+            padding: 10px 5px;
+            border: 1px solid $primary-color-text;
             border-radius: 5px;
-            margin-top: 10px;
-            transition: .3s ease-in-out;
-            span {
-              font-weight: 500;
+            
+            input[type = 'checkbox'] {
+              appearance: none;
+              -webkit-appearance: none;
+              width: 20px;
+              height: 20px;
+              border: 1px solid $divider-color-text;
+              vertical-align: middle;
+              border-radius: 5px;
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all .5s ease-out;
+              cursor: pointer;
+            }
+            input[type = 'checkbox']:focus {
+              outline: none;
+            }
+            input[type = 'checkbox']::after {
+              font-family: 'Font Awesome 5 Free';
+              content: '\f00c';
+              font-weight: 900;
+              font-size: 12px;
+              color: $primary-color-text;
+              display: none;
+            }
+            input[type = 'checkbox']:checked {
+              background-color: $primary-color;
+              border: none;
+            }
+            input[type = 'checkbox']:checked::after {
+              display: block;
+            }
+            .task_text {
+              border: none;
+              outline: none;
+              resize: none;
+              max-height: 40px;
+              font-size: 14px;
+              width: 100%;
+              padding: 0 5px;
+              margin-left: 5px;
+              background: transparent;
+            }
+            .remove_task {
+              position: absolute;
+              top: -10px;
+              right: -4px;
+              color: #ff8fb4;
+              z-index: 5;
+              padding: 2px;
+              background-color: $primary-color-text;
+              border-radius: 50%;
+              visibility: hidden;
+              cursor: pointer;
             }
           }
-          .traffic_list:hover {
+          .tasks:hover {
             border: 1px solid $primary-color;
           }
-        }
-        .traffic:hover {
-          border: 1px solid $primary-color;
-        }
+          }
+          
       }
       // End middle list
 
@@ -417,7 +502,7 @@ textarea::-webkit-scrollbar-thumb,
           max-width: 65%;
           a {
             text-decoration: none;
-            font-size: 18px;
+            font-size: 14px;
             font-weight: 500;
           }
           a:hover {
@@ -432,6 +517,7 @@ textarea::-webkit-scrollbar-thumb,
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            margin-top: 5px;
            }
            .error_questions_text {
             white-space: normal;
@@ -461,7 +547,7 @@ textarea::-webkit-scrollbar-thumb,
           span {
             width: 100%;
             text-align: right;
-            padding-top: 20px;
+            padding-top: 15px;
           }
         }
         .buttons {

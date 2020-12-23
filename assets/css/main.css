@@ -111,6 +111,7 @@ button:focus {
 }
 
 .admin_home textarea::-webkit-scrollbar,
+.admin_home .tasks::-webkit-scrollbar,
 .admin_home .error_questions::-webkit-scrollbar,
 .admin_home .error_questions_text::-webkit-scrollbar {
   width: 5px;
@@ -119,6 +120,7 @@ button:focus {
 }
 
 .admin_home textarea::-webkit-scrollbar-track,
+.admin_home .tasks::-webkit-scrollbar-track,
 .admin_home .error_questions::-webkit-scrollbar-track,
 .admin_home .error_questions_text::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 5px grey;
@@ -127,6 +129,7 @@ button:focus {
 }
 
 .admin_home textarea::-webkit-scrollbar-thumb,
+.admin_home .tasks::-webkit-scrollbar-thumb,
 .admin_home .error_questions::-webkit-scrollbar-thumb,
 .admin_home .error_questions_text::-webkit-scrollbar-thumb {
   background: #00cf4d;
@@ -224,7 +227,7 @@ button:focus {
   width: 600px;
   top: 75px;
   left: calc(100%/2.05);
-  z-index: 1;
+  z-index: 7;
   visibility: hidden;
   -webkit-transition: .3s;
   transition: .3s;
@@ -235,6 +238,17 @@ button:focus {
   position: relative;
   padding-left: 20px;
   font-size: 14px;
+}
+
+.admin_home .navbar .chat .chat_text li a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.admin_home .navbar .chat .chat_text li a:hover {
+  color: #00cf4d;
+  text-decoration: underline;
 }
 
 .admin_home .navbar .chat .chat_text li:before {
@@ -428,9 +442,10 @@ button:focus {
   position: relative;
 }
 
-.admin_home .header_title .info_item .middle_list .chart_box .month {
+.admin_home .header_title .info_item .middle_list .chart_box .month,
+.admin_home .header_title .info_item .middle_list .chart_box .user_online {
   position: absolute;
-  top: 20px;
+  top: 10px;
   right: 20px;
   width: 80px;
   height: 20px;
@@ -450,28 +465,45 @@ button:focus {
   border: 1px solid #00cf4d;
 }
 
-.admin_home .header_title .info_item .middle_list .chart_box .month i {
+.admin_home .header_title .info_item .middle_list .chart_box .month i,
+.admin_home .header_title .info_item .middle_list .chart_box .user_online i {
   padding-top: 10px;
   font-size: 22px;
+}
+
+.admin_home .header_title .info_item .middle_list .chart_box .user_online {
+  left: 20px;
+  width: 300px;
+  height: 35px;
+  background-color: #ffffff;
+  border: none;
+  z-index: 5;
+  font-weight: 600;
+  padding-left: 5px;
+}
+
+.admin_home .header_title .info_item .middle_list .chart_box .user_online span {
+  margin-top: -15px;
 }
 
 .admin_home .header_title .info_item .middle_list .chart_box:hover {
   border: 1px solid #00cf4d;
 }
 
-.admin_home .header_title .info_item .middle_list .traffic {
+.admin_home .header_title .info_item .middle_list .tasks {
   width: 270px;
   height: 310px;
   border-radius: 10px;
   border: 1px solid #efefef;
   color: #12114a;
-  padding: 20px;
+  padding: 20px 10px;
   margin-top: 15px;
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
+  overflow-y: scroll;
 }
 
-.admin_home .header_title .info_item .middle_list .traffic .traffic_item {
+.admin_home .header_title .info_item .middle_list .tasks .task_item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -481,61 +513,116 @@ button:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
-  font-weight: 600;
+  margin-bottom: 25px;
 }
 
-.admin_home .header_title .info_item .middle_list .traffic .traffic_item .month {
-  width: 80px;
-  height: 20px;
+.admin_home .header_title .info_item .middle_list .tasks .task_item input {
+  width: 85%;
+  height: 25px;
+  border-radius: 10px;
   padding: 0 5px;
-  border-radius: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 14px;
-  font-weight: 500;
-  border: 1px solid #00cf4d;
-}
-
-.admin_home .header_title .info_item .middle_list .traffic .traffic_item .month i {
-  padding-top: 10px;
-  font-size: 22px;
-}
-
-.admin_home .header_title .info_item .middle_list .traffic .traffic_list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 10px 15px;
+  outline: none;
   border: 1px solid #efefef;
-  border-radius: 5px;
-  margin-top: 10px;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
 }
 
-.admin_home .header_title .info_item .middle_list .traffic .traffic_list span {
-  font-weight: 500;
-}
-
-.admin_home .header_title .info_item .middle_list .traffic .traffic_list:hover {
+.admin_home .header_title .info_item .middle_list .tasks .task_item input:focus {
   border: 1px solid #00cf4d;
 }
 
-.admin_home .header_title .info_item .middle_list .traffic:hover {
+.admin_home .header_title .info_item .middle_list .tasks .task_item i {
+  color: #c1c4ca;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.admin_home .header_title .info_item .middle_list .tasks .task_item i:hover {
+  color: #00cf4d;
+}
+
+.admin_home .header_title .info_item .middle_list .tasks .task_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 5px;
+  max-width: 100%;
+  position: relative;
+  padding: 10px 5px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+
+.admin_home .header_title .info_item .middle_list .tasks .task_list input[type='checkbox'] {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #c1c4ca;
+  vertical-align: middle;
+  border-radius: 5px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+  cursor: pointer;
+}
+
+.admin_home .header_title .info_item .middle_list .tasks .task_list input[type='checkbox']:focus {
+  outline: none;
+}
+
+.admin_home .header_title .info_item .middle_list .tasks .task_list input[type='checkbox']::after {
+  font-family: 'Font Awesome 5 Free';
+  content: '\f00c';
+  font-weight: 900;
+  font-size: 12px;
+  color: #ffffff;
+  display: none;
+}
+
+.admin_home .header_title .info_item .middle_list .tasks .task_list input[type='checkbox']:checked {
+  background-color: #00cf4d;
+  border: none;
+}
+
+.admin_home .header_title .info_item .middle_list .tasks .task_list input[type='checkbox']:checked::after {
+  display: block;
+}
+
+.admin_home .header_title .info_item .middle_list .tasks .task_list .task_text {
+  border: none;
+  outline: none;
+  resize: none;
+  max-height: 40px;
+  font-size: 14px;
+  width: 100%;
+  padding: 0 5px;
+  margin-left: 5px;
+  background: transparent;
+}
+
+.admin_home .header_title .info_item .middle_list .tasks .task_list .remove_task {
+  position: absolute;
+  top: -10px;
+  right: -4px;
+  color: #ff8fb4;
+  z-index: 5;
+  padding: 2px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.admin_home .header_title .info_item .middle_list .tasks .tasks:hover {
   border: 1px solid #00cf4d;
 }
 
@@ -603,7 +690,7 @@ button:focus {
 .admin_home .header_title .info_item .error_questions .info_user a,
 .admin_home .header_title .info_item .user_complaints .info_user a {
   text-decoration: none;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -624,6 +711,7 @@ button:focus {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 5px;
 }
 
 .admin_home .header_title .info_item .error_questions .info_user .error_questions_text,
@@ -670,7 +758,7 @@ button:focus {
 .admin_home .header_title .info_item .user_complaints .right_list span {
   width: 100%;
   text-align: right;
-  padding-top: 20px;
+  padding-top: 15px;
 }
 
 .admin_home .header_title .info_item .error_questions .buttons,
