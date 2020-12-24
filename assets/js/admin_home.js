@@ -160,6 +160,10 @@ function handleOpenClick() {
 // to do list & tasks list
 
 addText.addEventListener('click', () => {
+
+    if(addTaskText.value == '') {
+        addTaskText.style.border = '1px solid #ff8fb4'
+    }else {
     let taskList = document.createElement('div');
 
     taskList.classList.add('task_list');
@@ -169,6 +173,8 @@ addText.addEventListener('click', () => {
      <textarea class="task_text" disabled>${addTaskText.value}</textarea>
       <i class="fas fa-times-circle remove_task"></i>`
       addTaskText.value = ''
+      addTaskText.style.border = '1px solid #efefef'
+    }
 
 
 let taskLists = document.querySelectorAll('.task_list');
@@ -197,6 +203,8 @@ function hanleMouseOutTask() {
 }
 
 });
+
+
 
 
 
