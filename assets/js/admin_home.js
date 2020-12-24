@@ -41,7 +41,7 @@ var chart = new Chart(ctx, {
             label: '',
             // backgroundColor: 'rgb(255, 99, 132)',
             borderColor: '#00cf4d',
-            data: [0, 50, 25, 20, 10, 30, 15 ]
+            data: [0, 10, 15, 25, 20, 30, 45 ]
         }]
     },
 
@@ -133,14 +133,15 @@ function handleMouseout() {
 }
 
 function handleRemoveQuestion() {
-    this.parentElement.parentElement.style.display = 'none'
+    this.parentElement.parentElement.remove();
 }
 
 
 let clickNumText;
 function handleOpenClick() {
-    console.dir(this.parentElement.parentElement.parentElement.children[1].children[2])
+    this.parentElement.parentElement.parentElement.children[1].children[2]
     let text = this.parentElement.parentElement.parentElement.children[1].children[2];
+
     if(clickNumText == 0) {
         this.innerHTML = 'Подробное'
         text.classList.remove('error_questions_text')
