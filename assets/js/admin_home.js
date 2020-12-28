@@ -41,7 +41,7 @@ var chart = new Chart(ctx, {
             label: '',
             // backgroundColor: 'rgb(255, 99, 132)',
             borderColor: '#00cf4d',
-            data: [0, 10, 15, 25, 20, 30, 45 ]
+            data: [0, 10, 15, 25, 20, 35, 45 ]
         }]
     },
 
